@@ -1,0 +1,108 @@
+.container{
+    width: 100%;
+    transition: all 0.4s ease;
+
+.titleContainer{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    color: rgb(42,42,42);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 10px 10px 1px rgba(0,0,0,.25);
+    transition: all 0.4s ease;
+
+}
+    .titleLetters{
+        text-align: center;
+        font-size: 300%;
+        display: inline-block;
+        transition: 0.2s all ease;
+        cursor: context-menu;
+        font-size: 40px;
+
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 5px 5px 1px rgba(0,0,0,1);
+        }
+
+    }
+
+
+    img{
+        width: 100%;
+        box-shadow: 10px 10px 1px rgba(0,0,0,.25);
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin: 25px 0;
+
+    }
+
+    .spanDiv{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    .liveLink{
+        transition: all 0.4s ease;
+        padding: 15px;
+        position: relative;
+        border: 1px solid;
+        color: white;
+        text-decoration: none;
+        box-shadow: 5px 5px 1px rgba(0,0,0,1);
+        background-color: rgb(42,42,42);
+        cursor: pointer;
+
+
+        span{
+
+
+
+            &::before, &::after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 0%;
+                left: 0;
+                transition: all 0.4s ease;
+                background-color: rgba(200,200,200, 0.5);
+            }
+
+            &::before{
+                top: 0
+            }
+
+            &::after{
+                bottom: 0;
+            }
+        }
+
+        
+        &:hover{
+
+            span{
+
+                &::before,&::after{
+                    height: 50%;
+                }
+
+            }
+        }
+
+    }
+
+    li{
+    font-size: 22px;
+    list-style: inside;
+    margin: 2px 0;
+    }
+
+    .techStackContainer{
+        margin: 20px 0;
+    }
+
+}

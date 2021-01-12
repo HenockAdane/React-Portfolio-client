@@ -1,0 +1,152 @@
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    margin: 50px 0;
+    font-size: 40px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    max-width: 100%;
+
+    .inputContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid  rgb(200, 200, 200);
+        margin: 20px 0;
+        box-shadow: 5px 5px 1px rgba(0,0,0,1);
+p{
+    font-size: 15px;
+}
+
+
+        input, textarea{
+            padding: 10px;
+            border: none;
+            width: 100%;
+            background-color: rgb(42,42,42);
+            outline: none;
+            color: rgb(200, 200, 200);
+
+
+            :focus{
+
+                .inputContainer{
+                    box-shadow: none
+                }
+            }
+
+        }
+
+        textarea{
+            resize: none;
+        }
+
+    }
+
+    .submitBtn{
+        transition: all 0.4s ease;
+        padding: 15px;
+        position: relative;
+        border: 1px solid;
+        color: white;
+        text-decoration: none;
+        box-shadow: 5px 5px 1px rgba(0,0,0,1);
+        background-color: rgb(42,42,42);
+        cursor: pointer;
+
+
+        span{
+
+
+
+            &::before, &::after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 0%;
+                left: 0;
+                transition: all 0.4s ease;
+                background-color: rgba(200,200,200, 0.5);
+            }
+
+            &::before{
+                top: 0
+            }
+
+            &::after{
+                bottom: 0;
+            }
+        }
+
+        
+        &:hover{
+
+            span{
+
+                &::before,&::after{
+                    height: 50%;
+                }
+
+            }
+        }
+
+    }
+
+    
+
+}
+
+p{
+    position: relative;
+    margin: 20px 0;
+
+    span{
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        background-color: rgb(42,42,42);
+        right: 0;
+        transition: all 1s ease;
+        z-index: 100;
+    }
+
+}
+
+.socials{
+    width: 350px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+
+
+    a{
+        display: inline-block;
+        color: rgb(200, 200, 200);
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+
+        &:hover{
+            .linkedin{
+                box-shadow: 2px 2px 1px rgba(0,0,0,1);
+            }
+        }
+    }
+
+    
+}
+
+@keyframes{
+    
+}

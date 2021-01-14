@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from "../CSScomponents/Contact.module.scss"
 import { GoMail } from 'react-icons/go';
-import { FaUserAlt} from 'react-icons/fa';
+import { FaUserAlt, FaTelegramPlane, FaLinkedin, FaGithub, FaInstagram} from 'react-icons/fa';
 import { BiPencil } from 'react-icons/bi';
+import Loader from "./Loader"
+import Title from './Title';
 
 
 
@@ -22,7 +24,8 @@ function Contact() {
             spanStyle: {
                 height: "100%"
             }
-        }
+        },
+        loading: false
     }))
 
     const valueChange = (e) => {
@@ -54,13 +57,22 @@ function Contact() {
     }
 
 
+
+
     const submit = (e) => {
         e.preventDefault()
 
-        fetch(`http://localhost:3001/ContactForm`, {
+        setState(ps => ({
+            ...ps,
+            loading: true
+        }))
+
+        fetch(`${process.env.REACT_APP_API}/ContactForm`, {
             method: "POST",
             mode: "cors",
-            headers: {"Content-Type": "application/json"},
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 name: state.name,
                 email: state.email,
@@ -90,7 +102,8 @@ function Contact() {
                             height: "0%"
                         }
                         
-                    }
+                    },
+                    loading: false
                 }))
     
                 setTimeout(()=> {
@@ -115,7 +128,6 @@ function Contact() {
         }).then(data => {
             
 
-            if (data){
                 setState(ps => ({
                     ...ps,
                     name: "",
@@ -130,7 +142,8 @@ function Contact() {
                             height: "0%"
                         }
                         
-                    }
+                    },
+                    loading: false
                 }))
     
                 setTimeout(()=> {
@@ -145,7 +158,6 @@ function Contact() {
                     }))
                 }, 4000)
     
-            }
     
         }).catch(err => {
             console.log(err.message)
@@ -164,7 +176,8 @@ function Contact() {
                         height: "0%"
                     }
                     
-                }
+                },
+                loading: false
             }))
 
             setTimeout(()=> {
@@ -185,7 +198,9 @@ function Contact() {
     return (
         <div className={styles.container}>
 
-        <h1 className={styles.title}>CONTACT ME</h1>
+        {state.loading ? <Loader fullScreen={true} /> : false}
+
+        <Title title="CONTACT ME" margin="50px 0" />
 
 
         <form onSubmit={submit}>
@@ -210,10 +225,22 @@ function Contact() {
                 <p><span style={state.serverMessage.spanStyle}></span>{state.serverMessage.message}</p>
 
 
-            <button type="submit" className={styles.submitBtn}><span>SEND MESSAGE</span></button>
+            <button type="submit" className={styles.submitBtn}><span>SEND MESSAGE</span><FaTelegramPlane size="20"/> </button>
 
 
         </form>
+
+
+        <div className={styles.otherWays}>
+            <h1>Other Ways To Contact Me</h1>
+            <p>If you'd like to contact me in a different way, please feel free to use the platforms shown below</p>
+            <div className={styles.socials}>
+                <a href="https://www.instagram.com/code_with_henock/" target="_b;ank" rel="noreferrer"><FaInstagram size="40"/></a> 
+                <a href="https://www.linkedin.com/in/henock-adane-1ab49219b" target="_blank" rel="noreferrer"><FaLinkedin size="40"/></a> 
+                <a href="https://github.com/HenockAdane" target="_blank" rel="noreferrer"><FaGithub size="40"/></a>
+            </div>
+            <p>Or you can email me directly at <a href="mailto:adanehenock@gmail.com" target="_blank" rel="noreferrer">adanehenock@gmail.com</a></p>
+        </div>
 
 
             

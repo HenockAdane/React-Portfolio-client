@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../CSScomponents/Portfolio.module.scss"
 import ProjectSmall from '../JScomponents/ProjectSmall';
+import Title from './Title';
 
 
 function Portfolio(props) {
@@ -9,8 +10,8 @@ function Portfolio(props) {
     return (
         <div className={styles.container}>
 
-                <div className={styles.intro}>
-                <h2><span>TECHSTACK</span></h2>
+                <section className={styles.techStackIntro}>
+                <Title title="TECHSTACK" margin="23px 0" border="1px solid" fontSize="26px" />
 
                     <div className={styles.techStackContainer}>
                         
@@ -24,11 +25,11 @@ function Portfolio(props) {
                         <li><span className={styles.techBtn}>MONGODB</span></li>
 
                     </div>
-                </div>
+                </section>
 
 
                 <section className={styles.projects}>
-                <h2><span>PROJECTS</span></h2>
+                <Title title="PROJECTS" margin="23px 0" border="1px solid" fontSize="26px" />
                     <div className={styles.projectsFlex}>
     
                     {props.projectDetails.map((project, index) => <ProjectSmall

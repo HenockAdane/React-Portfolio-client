@@ -20,17 +20,7 @@
 
     }
     
-    
-    &:hover{
 
-        .title{
-            color: white;
-            background-color: rgba(42,42,42, 0.9);
-        }
-        .techStackContainer{
-            height:100%;
-        }
-    }
 
     .hoverContainer{
         position: relative;
@@ -90,6 +80,41 @@
     }
 
 }
+
+@media (min-width: 768px){
+    
+    .container{
+
+        &:hover{
+
+            .title{
+                color: white;
+                background-color: rgba(42,42,42, 0.9);
+            }
+            .techStackContainer{
+                height:100%;
+            }
+        }
+
+    }
+
+}
+
+// @media (min-width: 768px){
+    
+//     .container{
+
+//         &:focus{
+
+//             .techStackContainer{
+//                 height: 100%;
+//             }
+//         }
+
+//     }
+
+// }
+
 
 @media (max-width: 500px){
     

@@ -16,7 +16,7 @@ function App() {
           description: "(NOT FINISHED YET)This project is a full stack ecommerce store, inspired heavily by Nike. It will be built to be responsive for all screen sizes and will inlcude features such as user sign up and log in and also a payment method.",
           img: "/images/portfolio/desktop/snikers.png",
           type: "Interaction Design / Full Stack Development",
-          techUsed: ["React", "SCSS MODULE", "React-router-dom", "Redux", "Node(Express)", "MongoDB(mongoose)"],
+          techUsed: ["React", "SCSS MODULE", "React-router-dom", "Redux", "Express", "MongoDB(mongoose)"],
           liveLink: "https://snikers-by-henock-adane.vercel.app/"
       },
       {

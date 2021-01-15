@@ -15,7 +15,7 @@ function About() {
 
 
 
-                <p className={styles.introMsg}>I am a self taught Fullstack-Developer who is looking for a role in an exciting company where I am able to improve myself as a developer. Check out my projects on the <Link to="/portfolio">Portfolio Page</Link> or contact me on the <Link to="/contact">Contact Page</Link>.</p>
+                <p className={styles.introMsg}>I am a self taught Fullstack-Developer who is proficient with creating single or multipage websites with services such as a contact form, secure user sign up and log in, and payment. Check out my projects on the <Link to="/portfolio">Portfolio Page</Link> or contact me on the <Link to="/contact">Contact Page</Link>.</p>
 
 
             
